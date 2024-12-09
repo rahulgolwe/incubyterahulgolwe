@@ -9,8 +9,8 @@ public class StringCalculator {
             return 0;
         }
         
-        //Split by commas and sum the numbers
-        String[] numArray = numbers.split("[,]");
+        //Split by both commas and new lines
+        String[] numArray = numbers.split("[,\\n]");
         int sum = 0;
         for (String num : numArray) {
             sum += Integer.parseInt(num);

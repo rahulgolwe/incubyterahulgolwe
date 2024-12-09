@@ -31,6 +31,13 @@ class StringCalculatorTest {
     }
     
     
+    //Method to check new line and comma separated multiple number input.
+    @Test
+    void testNewLineSeparators() {
+        StringCalculator calc = new StringCalculator();
+        assertEquals(6, calc.add("1\n2,3"));
+    }
+    
     
     
 }
