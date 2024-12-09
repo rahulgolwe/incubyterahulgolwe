@@ -9,11 +9,12 @@ public class StringCalculator {
             return 0;
         }
         
-        //If there is just one number, return it
-        if (!numbers.contains(",")) {
-            return Integer.parseInt(numbers);
+        //Split by commas and sum the numbers
+        String[] numArray = numbers.split("[,]");
+        int sum = 0;
+        for (String num : numArray) {
+            sum += Integer.parseInt(num);
         }
-
-        return 0;
+        return sum;
     }
 }

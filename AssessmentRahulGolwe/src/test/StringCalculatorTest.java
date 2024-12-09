@@ -23,4 +23,14 @@ class StringCalculatorTest {
     }
     
     
+    //Method to check comma separated multiple number input.
+    @Test
+    void testMultipleNumbers() {
+        StringCalculator calc = new StringCalculator();
+        assertEquals(6, calc.add("1,5"));
+    }
+    
+    
+    
+    
 }
