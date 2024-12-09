@@ -22,12 +22,29 @@ public class StringCalculator {
         return sumNumbers(numArray);
     }
 	
-	//method to return the sum of numbers stored in array
+	//method to return runtime exception in case of any negative number. 
+	//if any negative number is not parsed then retunr the sum.
 	private int sumNumbers(String[] numArray) {
         int sum = 0;
+        StringBuilder negativeNumbers = new StringBuilder();
+        
         for (String num : numArray) {
-            sum += Integer.parseInt(num);
+            int parsedNum = Integer.parseInt(num);
+            if (parsedNum < 0) {
+                if (negativeNumbers.length() > 0) {
+                    negativeNumbers.append(",");
+                }
+                negativeNumbers.append(parsedNum);
+            }
+            sum += parsedNum;
         }
+
+        if (negativeNumbers.length() > 0) {
+            throw new RuntimeException("Negative numbers not allowed: " + negativeNumbers);
+        }
+
         return sum;
     }
+	
+	
 }

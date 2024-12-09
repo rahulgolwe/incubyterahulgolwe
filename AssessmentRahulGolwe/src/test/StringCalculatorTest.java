@@ -39,7 +39,7 @@ class StringCalculatorTest {
     }
     
     
-    //handle the case where the input specifies a custom delimiter at the beginning, 
+    //method to handle the case where the input specifies a custom delimiter at the beginning, 
     //example:-    "//;\n1;2", where the delimiter is ;
     @Test
     void testCustomDelimiter() {
@@ -48,5 +48,14 @@ class StringCalculatorTest {
     }
     
     
+    //Method to check negative numbers input.
+    @Test
+    void testNegativeNumbers() {
+        StringCalculator calc = new StringCalculator();
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> {
+            calc.add("1,-2,3,-4");
+        });
+        assertEquals("Negative numbers not allowed: -2,-4", exception.getMessage());
+    }
     
 }
