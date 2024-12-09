@@ -9,7 +9,11 @@ public class StringCalculator {
             return 0;
         }
         
-        // If there's one number, return its integer value
-        return Integer.parseInt(numbers);
+        //If there is just one number, return it
+        if (!numbers.contains(",")) {
+            return Integer.parseInt(numbers);
+        }
+
+        return 0;
     }
 }
