@@ -39,5 +39,14 @@ class StringCalculatorTest {
     }
     
     
+    //handle the case where the input specifies a custom delimiter at the beginning, 
+    //example:-    "//;\n1;2", where the delimiter is ;
+    @Test
+    void testCustomDelimiter() {
+        StringCalculator calc = new StringCalculator();
+        assertEquals(3, calc.add("//;\n1;2"));
+    }
+    
+    
     
 }
